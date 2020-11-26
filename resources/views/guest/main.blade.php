@@ -46,82 +46,17 @@
 
 
 <!-- Example single danger button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    ძაღლები
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">საკვები</a>
-    <a class="dropdown-item" href="#">ვიტამინი</a>
-    <a class="dropdown-item" href="#">ჰიგიენა</a>
-    <a class="dropdown-item" href="#">დესერტი</a>
-    <a class="dropdown-item" href="#">საყელოები და საბელები</a>
-    <a class="dropdown-item" href="#">გადამზიდები და ჩანთები</a>
-    <a class="dropdown-item" href="#">ჯამები</a>
-    <a class="dropdown-item" href="#">სახლები და საწოლები</a>
-    <a class="dropdown-item" href="#">სათამაშოები</a>
-    <a class="dropdown-item" href="#">გრუმინგი</a>
-    <a class="dropdown-item" href="#">ტანსაცმელი</a>
-  </div>
-</div>
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    კატები
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">საკვები</a>  
-    <a class="dropdown-item" href="#">ვიტამინი</a>  
-    <a class="dropdown-item" href="#">ჰიგიენა</a>  
-    <a class="dropdown-item" href="#">დესერტი</a>  
-    <a class="dropdown-item" href="#">სათამაშოები</a>  
-    <a class="dropdown-item" href="#">ჯამები</a>  
-    <a class="dropdown-item" href="#">საყელოები და საბელები</a>  
-    <a class="dropdown-item" href="#">გრუმინგი</a>  
-    <a class="dropdown-item" href="#">სახლები და საწოლები</a>  
-    <a class="dropdown-item" href="#">გადამზიდები და ჩანთები</a>  
-</div>
-</div>
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    მღრღნელები
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">საკვები</a>
-    <a class="dropdown-item" href="#">გალიები</a>
-    <a class="dropdown-item" href="#">აქსესუარები</a>
-    <a class="dropdown-item" href="#">ჯამები</a>
-    <a class="dropdown-item" href="#">სათამაშოები</a>
-    <a class="dropdown-item" href="#">ქვიშა</a>
-  </div>
-</div>
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    ფრინველები
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">საკვები</a>
-    <a class="dropdown-item" href="#">გალიები</a>
-    <a class="dropdown-item" href="#">აქსესუარები</a>
-  </div>
-</div>
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    რეპტილიები
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">რეპტილიები</a> 
-  </div>
-</div>
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    ზოოქარდი
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">ზოოქარდი</a>
-  </div>
-</div>
 
+<div class="btn-group">
+@foreach (App\Category::get() as $element)
+   <a href="{{ route('category', ["id"=>$element->id]) }}" class="" >
+    {{$element->category_name}}
+  </a >
 
+ @endforeach 
+  
+      
+</div>
 
 <table>
   @foreach ($products as $product)

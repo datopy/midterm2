@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 
 Auth::routes();
 
-Route::POST('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get("zoomart.ge", "MainController@main")->name("mainpage");
 Route::get("more/{id}", "MainController@more")->name("moreproduct");
@@ -26,6 +26,7 @@ Route::post("store/comment", "MainController@comment")->name("storecomment");
 Route::get("zoomart/{category}", "MainController@category")->name("categorychoose");
 
 
+Route::get("cat/{id}", "CategoryController@index")->name("category");
 
 
 #Admin Routes
